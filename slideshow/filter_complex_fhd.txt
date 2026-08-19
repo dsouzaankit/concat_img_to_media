@@ -1,0 +1,5 @@
+[0:v]fps=30,setpts=PTS-STARTPTS,pad=ceil(iw/2)*2:ceil(ih/2)*2,zscale=rin=full:r=limited:m=709,format=yuv420p,split=2[s1][s2];
+[s1]scale=1920x1080:flags=lanczos:force_original_aspect_ratio=increase,crop=1920:1080,setsar=1,gblur=sigma=10[bg];
+[s2]scale=-2:1080:flags=lanczos,setsar=1[ov];
+[bg][ov]overlay=(W-w)/2:(H-h)/2,format=yuv420p,setsar=1[vout];
+[1:a]aformat=sample_rates=44100:channel_layouts=stereo,asetpts=PTS-STARTPTS[aout];

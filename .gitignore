@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.pem
+*.key
+setup_script_files.local.py
